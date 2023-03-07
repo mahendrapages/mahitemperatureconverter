@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body{background-color: rgb(255, 165, 0,1)}
+
+.he{color:white;
+text-align:center;
+font-size:40px;
+font-family:
+
+}
+.al{
+position: absolute;
+  left: 40%;
+ 
+  }
+  
+.p{
+background-color:rgb(255, 165, 12,2);
+background-size:cover;
+padding: 0.1px;
+position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 80%;
+  height: 50%;
+  font-size:20px;
+  
+  
+}
+
+
+</style>
+
+<script>
+function myFunction() {
+
+  var x = document.getElementById("myNumber").value;
+  var a, b, c, k;
+a = x;
+q=a.slice(0,-1);
+
+b = Number.parseInt(a.slice(0, -1));
+
+if (a.slice(-1)[0] === "f" || a.slice(-1)[0] === "F") {
+  c = (b - 32) * 0.5556;
+  k = c + 273.15;
+  document.getElementById("demo").innerHTML=c+"<sup>0</sup>C ";
+  document.getElementById("demo1").innerHTML=k+"<sup>0</sup>K "
+  
+  
+}
+else if (a.slice(-1)[0] === "c" || a.slice(-1)[0] === "C") {
+  c = (b * 95) +32;
+  k = b + 273.15;
+  document.getElementById("demo").innerHTML=c+"<sup>0</sup>F ";
+  document.getElementById("demo1").innerHTML=k+"<sup>0</sup>K "
+}
+else if (a.slice(-1)[0] === "k" || a.slice(-1)[0] === "K") {
+  c=b-273.15;
+  k=(c*95)+32;
+  document.getElementById("demo").innerHTML=c+"<sup>0</sup>C ";
+  document.getElementById("demo1").innerHTML=c+"<sup>0</sup>F ";
+}
+else{
+
+document.getElementById("demo").innerHTML="Not valid input try using 'f' or 'c' or 'k' at end" ;
+}
+
+
+}
+</script>
+</head>
+<body>
+
+<h1 class="he">Temperature converter</h1>
+<h3 class="h3">Temperature given is to end with 'f' for fahrenheit,'c' for celsius,'k' for kelvin.. </h3>
+<div class="al">
+<input type="text" id="myNumber" >
+
+<button onclick="myFunction()">Convert Now</button></div>
+<div class="p">
+<p><b>Temperature is</b>
+<p id="demo"></p>
+<p id="demo1"></p>
+</p>
+</div>
+
+
+</body>
+</html>
